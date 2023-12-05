@@ -9,6 +9,4 @@ print("Total: " + str(total))
 average = total / len(array)
 print("Average: " + str(average))
 
-#ChatGPT
-
 
