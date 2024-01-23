@@ -29,7 +29,7 @@ class LinkedList():
             current = current.get_next()
 
     
-    def insert_at_front(self data):
+    def insert_at_front(self, data):
 
         #Create a new node
         new_node = Node(data)
