@@ -50,6 +50,7 @@ def is_empty():
 
 en_queue("spongebob")
 en_queue("spongebob")
+print(queue)
 print(de_queue())
 en_queue("q")
 print(queue)
