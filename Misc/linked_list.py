@@ -43,6 +43,34 @@ class LinkedList():
             self.head = new_node
 
         #FINAL STATEMENT -- ORDERING LISTS
+            
+    def insert_in_order(self, data):
+        #Create new node + start at head
+        new_node = Node(data)
+        current = self.head
+
+        #Confirm order
+        if current is None:
+            self.head = new_node
+
+        elif new_node.get_data() < current.get_data():
+            #Set new node as head
+            new_node.set_next(self.head)
+            self.head = new_node
+        
+        #Otherwise find where the new node should be positioned
+        else:
+            #Repeat until the point of intersection is found
+            while (current.get_next().get_data() is not None
+                   and current.get_next().get_data() < new_node.get_data()):
+                #Get next node
+                current - current.get_next()
+            
+            #Update pointers on new and current nodes
+            new_node.set_next(current.get_next())
+            current.set_next(new_node)
+
 
 my_list = LinkedList()
-
+my_list.insert_at_front("a persons name")
+my_list.insert_at_front("someone else's name")
