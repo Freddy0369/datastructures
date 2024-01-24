@@ -28,6 +28,22 @@ class LinkedList():
             print(current.get_data())
             current = current.get_next()
 
+    def delete(self, data):
+
+        #Start at the head of the list
+        current = self.head
+
+        #Check if the head node is to be deleted
+        if current.data == data:
+            #Update the head pointer
+            self.head = current.get_next()
+        else:
+            #Repeat until the node has been found
+            while current.next.get_data() != data:
+                current = current.get_next()
+        
+            current.set_next(current.get_next().get_next())
+
     
     def insert_at_front(self, data):
 
@@ -69,7 +85,6 @@ class LinkedList():
             #Update pointers on new and current nodes
             new_node.set_next(current.get_next())
             current.set_next(new_node)
-
 
 my_list = LinkedList()
 my_list.insert_at_front("a persons name")
