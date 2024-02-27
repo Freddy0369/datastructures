@@ -2,17 +2,11 @@ class queue():
     def __init__(self):
         self.top = None
 
-    #enQueue will check if this is the first node in the stack. If it is, it will set
-    #prev_ and next_ to None, else, it will set prev_ = top. Regardless, top will then be set to
-    #the new node.
+    #enQueue will set prev_ = top. Then, top will then be set to the new node.
     
     def enQueue(self, name):
         #Get locations of nodes
-        if self.top == None:
-            prev_ = None
-        else:
-            prev_ = self.top
-        
+        prev_ = self.top
         next_ = None
 
         #Apply locations and name
